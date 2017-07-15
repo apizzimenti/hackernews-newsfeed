@@ -4,9 +4,8 @@
  * @param {*} param     Paramter to check.
  * @param {string} type Desired type.
  * @returns {boolean}
- * @private
  */
-function _paramExist (param, type) {
+function paramExist(param, type) {
     return typeof param === type && param !== undefined && param !== null;
 }
 
@@ -18,7 +17,7 @@ function _paramExist (param, type) {
  * @returns {*}
  */
 function absurl (root, path) {
-    if (_paramExist(root, "string") && _paramExist(path, "string")) {
+    if (paramExist(root, "string") && paramExist(path, "string")) {
         if (root[root.length - 1] === "/") {
             return root + path;
         } else {

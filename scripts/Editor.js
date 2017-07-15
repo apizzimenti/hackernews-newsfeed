@@ -27,15 +27,15 @@ Editor.prototype.style.font = function (context, family, size, weight) {
     var i,
         text;
     
-    if (!_paramExist(family, "string")) {
+    if (!paramExist(family, "string")) {
         family = "Comic Sans";
     }
     
-    if (!_paramExist(size, "number")) {
+    if (!paramExist(size, "number")) {
         size = 12;
     }
     
-    if (!_paramExist(weight, "string")) {
+    if (!paramExist(weight, "string")) {
         weight = "";
     }
     
@@ -59,7 +59,7 @@ Editor.prototype.style.font = function (context, family, size, weight) {
 Editor.prototype.style.height = function (subtext, height) {
     var i;
     
-    if (!_paramExist(height, "number")) {
+    if (!paramExist(height, "number")) {
         height = "";
     }
     
@@ -86,7 +86,7 @@ Editor.prototype.removeFirst = {};
  * @this Editor
  */
 Editor.prototype.removeFirst.parent = function (list, classname) {
-    if (_paramExist(classname, "string")) {
+    if (paramExist(classname, "string")) {
         list.getElementsByClassName(classname)[0].parentNode.remove();
     } else {
         console.error("Invalid class name provided.");
@@ -103,7 +103,7 @@ Editor.prototype.removeFirst.parent = function (list, classname) {
  * @this Editor
  */
 Editor.prototype.removeFirst.byClass = function (list, classname) {
-    if (_paramExist(classname, "string")) {
+    if (paramExist(classname, "string")) {
         list.getElementsByClassName(classname)[0].remove();
     } else {
         console.error("Invalid class name provided.");
@@ -120,7 +120,7 @@ Editor.prototype.removeFirst.byClass = function (list, classname) {
  * @this Editor
  */
 Editor.prototype.removeFirst.byTag = function (list, tagname) {
-    if (_paramExist(tagname, "string")) {
+    if (paramExist(tagname, "string")) {
         list.getElementsByTagName(tagname)[0].remove();
     } else {
         console.error("Invalid tag name provided.");
@@ -153,7 +153,7 @@ Editor.prototype.links.absolute = function (list, subtext, url) {
         i,
         j;
     
-    if (!_paramExist(url, "string")) {
+    if (!paramExist(url, "string")) {
         console.error("URL provided is invalid.");
         return;
     }
